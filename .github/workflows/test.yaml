@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: build
+      run: gcc -W -Wall -O test.c -o test
+    - name: run
+      run: ./test
